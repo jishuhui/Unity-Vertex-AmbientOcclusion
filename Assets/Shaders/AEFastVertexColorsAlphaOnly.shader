@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "AE/Fast Vertex Alpha as RGB" {
 	
 	Properties {
@@ -42,7 +44,7 @@ Shader "AE/Fast Vertex Alpha as RGB" {
 			v2f vert(appdata_color v)
 			{
 				v2f o;
-				o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+				o.pos = UnityObjectToClipPos (v.vertex);
 				o.color.rgb = 1-( pow((1-v.color.a)*_Intensity, _Power ) );
 				o.color.a = 1;
 				return o;

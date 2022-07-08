@@ -26,7 +26,7 @@ public class DeepCopyGO : MonoBehaviour
 			Mesh mesh = mf.sharedMesh;
 			Mesh clonemesh = new Mesh();
 			clonemesh.vertices = mesh.vertices;
-			clonemesh.uv1 = mesh.uv1;
+			clonemesh.uv2 = mesh.uv2;
 			clonemesh.uv2 = mesh.uv2;
 			clonemesh.uv = mesh.uv;
 			clonemesh.normals = mesh.normals;
