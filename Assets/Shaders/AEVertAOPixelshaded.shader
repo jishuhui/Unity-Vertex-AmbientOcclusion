@@ -33,6 +33,7 @@ Shader "AE/AEVertAO (Pixel shaded)" {
 			half4 c = tex2D (_MainTex, IN.uv_MainTex);
 			half ao = pow((1-IN.color.a)*_AOIntensity, _AOPower );
 			o.Albedo = lerp(c.rgb, _AOColor, ao);
+			
 			o.Alpha = c.a;
 		}
 		
